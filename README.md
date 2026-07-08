@@ -1,56 +1,105 @@
-# ✦ InkWell — Personalized Article Writing Platform
+# ✦ InkWell — Personalized Article Writing & Publishing Platform
 
-> A beautifully designed MERN stack blog platform with dark/light mode, rich text editing, and a reader-first experience.
+> A beautifully designed, reader-first MERN stack blogging platform. Built with a modern Next.js 16 App Router frontend, a robust Express & MongoDB API server, and a fully customizable styling and typography system.
+
+---
+
+## 📖 Table of Contents
+
+- [🚀 Quick Start](#-quick-start)
+  - [Prerequisites](#prerequisites)
+  - [1. Backend Setup](#1-backend-setup)
+  - [2. Frontend Setup](#2-frontend-setup)
+  - [3. Running in Development](#3-running-in-development)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [✨ Key Features](#-key-features)
+- [🔌 API Endpoints](#-api-endpoints)
+- [🎨 Design System](#-design-system)
+- [🛡️ Production Security Checklist](#️-production-security-checklist)
+- [🌐 Deployment Guides](#-deployment-guides)
+- [💰 Monetization Playbook](#-monetization-playbook)
+- [📄 License](#-license)
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js v18+
-- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
+- **Node.js**: v18 or higher
+- **MongoDB**: Local installation or a [MongoDB Atlas](https://www.mongodb.com/atlas) cloud database.
 
-### 1. Setup Environment
+---
 
+### 1. Backend Setup
+
+First, configure your environment variables:
 ```bash
 cd server
 cp .env.example .env
 ```
 
-Edit `server/.env`:
-```
+Edit your `server/.env` configuration:
+```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/inkwell
 JWT_SECRET=your_super_secret_key_change_this
 NODE_ENV=development
+CLIENT_URL=http://localhost:3000
 ```
 
-### 2. Install Dependencies
-
+Install backend dependencies:
 ```bash
-# From root folder
-cd server && npm install
-cd ../client && npm install
+npm install
 ```
 
-### 3. Run in Development
+---
 
-Open two terminals:
+### 2. Frontend Setup
 
-**Terminal 1 — Backend:**
+Move to the client folder and install dependencies:
+```bash
+cd ../client
+npm install
+```
+
+---
+
+### 3. Running in Development
+
+Run both the backend and frontend in separate terminal windows:
+
+**Terminal 1: Backend API Server**
 ```bash
 cd server
 npm run dev
 ```
+*Runs at:* `http://localhost:5000`
 
-**Terminal 2 — Frontend:**
+**Terminal 2: Frontend App**
 ```bash
 cd client
-npm start
+npm run dev
 ```
+*Runs at:* `http://localhost:3000`
 
-App runs at: `http://localhost:3000`  
-API runs at: `http://localhost:5000`
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 16 (App Router)
+- **UI & Logic**: React 19, Lucide React (Icons), React Toastify (Notifications)
+- **Animations**: Framer Motion
+- **Rich Text Editor**: Quill / React Quill
+- **Styling**: Vanilla CSS with modular stylesheets and custom design tokens
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB & Mongoose ODM
+- **Authentication**: JSON Web Tokens (JWT) & BcryptJS (Password hashing)
+- **File Uploads**: Multer (Local disk storage)
 
 ---
 
@@ -58,185 +107,190 @@ API runs at: `http://localhost:5000`
 
 ```
 inkwell/
-├── server/                  # Express + MongoDB API
-│   ├── models/
-│   │   ├── User.js          # User schema (auth, profile)
-│   │   └── Article.js       # Article schema (content, layout, tags)
-│   ├── routes/
-│   │   ├── auth.js          # Register, login, profile
-│   │   ├── articles.js      # CRUD, likes, views, filters
-│   │   └── upload.js        # Image upload (Multer)
+├── server/                  # Node.js + Express API Backend
 │   ├── middleware/
-│   │   └── auth.js          # JWT auth middleware
-│   ├── uploads/             # Uploaded images stored here
-│   └── index.js             # Server entry point
+│   │   └── auth.js          # JWT authentication checks
+│   ├── models/
+│   │   ├── User.js          # User profile and auth schema
+│   │   └── Article.js       # Article fields, layout configuration, likes, views
+│   ├── routes/
+│   │   ├── auth.js          # Authentication, Profile and User endpoint routes
+│   │   ├── articles.js      # Article CRUD, filters, and like endpoints
+│   │   └── upload.js        # File uploading configuration
+│   ├── uploads/             # Destination for uploaded images
+│   ├── .env.example         # Template for environment settings
+│   ├── index.js             # API entrypoint and database connection
+│   └── package.json         # Backend dependencies
 │
-└── client/                  # React frontend
+└── client/                  # Next.js App Router Frontend
+    ├── public/              # Static files
     └── src/
-        ├── context/
-        │   ├── AuthContext.js   # Auth state (login/logout/register)
-        │   └── ThemeContext.js  # Dark/light mode
-        ├── components/
-        │   ├── Layout/
-        │   │   ├── Navbar.js    # Sticky nav with theme toggle
-        │   │   └── Footer.js
+        ├── app/             # Application pages
+        │   ├── article/
+        │   │   └── [slug]/  # Immersive article viewer (dynamic route)
+        │   ├── dashboard/   # Content publisher metrics dashboard
+        │   ├── login/       # Author login
+        │   ├── profile/     # Settings & biography customizations
+        │   ├── register/    # New author onboarding
+        │   ├── write/       # Dynamic composition interface
+        │   ├── layout.js    # Layout wrapper with Context providers
+        │   ├── page.js      # Main reading stream landing
+        │   └── globals.css  # Layout directives and page transitions
+        ├── components/      # Shared components
         │   ├── Cards/
-        │   │   └── ArticleCard.js  # Animated article cards
+        │   │   └── ArticleCard.js  # Interactive article cards
+        │   ├── Layout/
+        │   │   ├── Footer.js
+        │   │   └── Navbar.js       # Dynamic navigation header
         │   └── UI/
-        │       └── ProtectedRoute.js
-        ├── pages/
-        │   ├── Home.js          # Landing + article grid
-        │   ├── Write.js         # Rich text editor
-        │   ├── ArticlePage.js   # Article reader
-        │   ├── Dashboard.js     # Author dashboard
-        │   ├── Profile.js       # Profile settings
-        │   ├── Login.js
-        │   └── Register.js
-        └── styles/
-            └── globals.css      # Design tokens + animations
+        │       └── ProtectedRoute.js # Interactive client-side router shield
+        ├── context/         # React Context stores
+        │   ├── AuthContext.js  # Global auth status
+        │   └── ThemeContext.js # Global active theme store (Light/Dark)
+        └── styles/          # Modular component stylesheet layers
+            ├── ArticleCard.css
+            ├── ArticlePage.css
+            ├── Auth.css
+            ├── Dashboard.css
+            ├── Footer.css
+            ├── Home.css
+            ├── Navbar.css
+            ├── Profile.css
+            └── Write.css
 ```
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-### For Readers
-- 🌙 **Dark / Light mode** — auto-detects system preference, persists across sessions
-- 📖 **Reading progress bar** — thin accent-colored bar at top
-- 🔍 **Search & filter** — by domain, tag, keywords
-- ❤️ **Like articles** — with animated heart button
-- 📱 **Fully responsive** — mobile-first design
-- 🎨 **Soothing color palette** — warm ink tones, no eye strain
+### 📖 Reader Experience
+*   **🌓 Adaptive Dark Mode**: Detects system preferences automatically and preserves choice across active sessions.
+*   **⚡ Smart Reading Gauge**: Top-pinned scrolling progress line keeps readers oriented.
+*   **🔍 Granular Filters**: Search index covering titles, summaries, specific domains, and tag groups.
+*   **❤️ Micro-Animated Interactions**: Engaging like animations and transitions for responsive feedback.
+*   **📱 Responsive Layouts**: Fluid design prioritizing readability on viewport scales from mobile to desktop.
+*   **🎨 High-Readability Fonts**: Optimized typography featuring serif body fonts for comfortable long-form reading.
 
-### For Writers
-- ✍️ **Rich text editor** — bold, italic, headings, lists, blockquotes, code, links
-- 🖼️ **Image uploads** — in article body and cover image
-- 🎨 **Custom styling** — choose font family, font size, text color, accent color
-- 📐 **Layout options** — Classic, Magazine, Minimal
-- 🏷️ **Tagging & domains** — organize by category
-- 💾 **Draft / Publish** — save drafts, publish when ready
-- 👁️ **Live preview** — see exactly how readers will see your article
-- 📊 **Dashboard** — views, likes, total articles at a glance
-
----
-
-## 🌐 Deployment
-
-### Option A: Deploy to Railway (Recommended — Free)
-
-1. Push code to GitHub
-2. Go to [railway.app](https://railway.app), create a new project
-3. Add a **MongoDB** plugin (or use Atlas)
-4. Deploy server: set root to `/server`, start command `node index.js`
-5. Set env vars: `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, `CLIENT_URL=your-frontend-url`
-6. Deploy client: set root to `/client`, build command `npm run build`, publish directory `build`
-
-### Option B: Deploy to Render (Free tier)
-
-**Backend:**
-1. New Web Service → connect GitHub repo
-2. Root Directory: `server`
-3. Build Command: `npm install`
-4. Start Command: `node index.js`
-5. Add env vars
-
-**Frontend:**
-1. New Static Site → connect GitHub repo
-2. Root Directory: `client`
-3. Build Command: `npm run build`
-4. Publish Directory: `build`
-5. Add env: `REACT_APP_API_URL=https://your-backend.onrender.com`
-
-### Option C: VPS (DigitalOcean / Linode)
-
-```bash
-# On server
-git clone your-repo
-cd inkwell/server && npm install
-cd ../client && npm install && npm run build
-
-# Serve client build with nginx
-# Run server with PM2
-pm2 start server/index.js --name inkwell-api
-```
+### ✍️ Publisher Toolbox
+*   **📝 Powerful Composer**: Rich text formatting options: headings, bold/italic, lists, link attachments, blockquotes, and code elements.
+*   **🖼️ Media Library Integration**: Cover image upload and body-inserted images powered by direct API uploads.
+*   **🎨 Custom Stylers**: Custom options for font families, sizing, line-height, and primary accents.
+*   **📐 Layout Presets**: Choose between **Classic**, **Magazine**, and **Minimal** page templates.
+*   **🏷️ Structured Classification**: Categorize content with custom tags and root domains.
+*   **👁️ True Live Preview**: Real-time styling view matches the exact final published result.
+*   **📊 Analytics Dashboard**: Track total article reach, individual view counts, and total reader likes.
 
 ---
 
-## 💰 How to Monetize InkWell
+## 🔌 API Endpoints
 
-Since this is your personalized platform, here are **real, proven revenue streams**:
+### Authentication & Profile
+| Method | Endpoint | Auth | Description |
+| :--- | :--- | :---: | :--- |
+| `POST` | `/api/auth/register` | ❌ | Create a new user account & return JWT |
+| `POST` | `/api/auth/login` | ❌ | Authenticate credentials & return JWT |
+| `GET` | `/api/auth/me` | 🔒 | Fetch logged-in user details |
+| `PUT` | `/api/auth/profile` | 🔒 | Update name, biography, or user avatar |
 
-### 1. 📧 Newsletter (Easiest Start)
-- Add a "Subscribe" section using **ConvertKit** or **Beehiiv** (free tiers)
-- Build an email list of loyal readers
-- Sell your newsletter directly ($5–$15/month per subscriber)
-- **Potential: $500–$5,000/month** with 500–1000 subscribers
+### Articles
+| Method | Endpoint | Auth | Description |
+| :--- | :--- | :---: | :--- |
+| `GET` | `/api/articles` | ❌ | Fetch all published articles (with search, domain, and tag filters) |
+| `GET` | `/api/articles/my` | 🔒 | Fetch author's draft/published articles for Dashboard |
+| `GET` | `/api/articles/:slug` | ❌ / 🔒 | Fetch single article by slug (Increment views count) |
+| `POST` | `/api/articles` | 🔒 | Save a new draft or publish an article |
+| `PUT` | `/api/articles/:id` | 🔒 | Update article metadata or body content (Author only) |
+| `DELETE` | `/api/articles/:id` | 🔒 | Permanently remove an article (Author only) |
+| `POST` | `/api/articles/:id/like` | 🔒 | Toggle user like status on an article |
 
-### 2. 🤝 Sponsorships & Brand Deals
-- Once you have consistent traffic (5k+ monthly readers), brands pay to be featured
-- A single sponsored article in a niche (tech, finance, health) can earn **$200–$2,000**
-- Add a "Work With Me" page linking to your email
-
-### 3. 📚 Digital Products
-- Write an **eBook** or **guide** and sell it directly from your site
-- Link to Gumroad or Lemon Squeezy for payment
-- Example: "The Developer's Guide to Side Projects" — sell for $19–$49
-- **Potential: $1,000–$10,000** in a launch
-
-### 4. 💼 Freelance & Consulting
-- Your articles demonstrate expertise
-- Add a "Hire Me" page → land writing, consulting, or dev clients
-- Rates: $50–$300/hr for niche expertise
-
-### 5. 💬 Paid Community / Membership
-- Integrate **Stripe** + a simple paywall (Node.js middleware) for premium articles
-- Readers pay $5–$15/month for exclusive content
-- 100 members × $10 = **$1,000/month recurring**
-
-### 6. 📢 AdSense / Carbon Ads
-- Once traffic hits 10k+/month, apply to **Google AdSense** or **Carbon Ads** (tech niche)
-- Non-intrusive sidebar/footer ads
-- **$1–$5 per 1,000 views** (RPM varies by niche)
-
-### 7. 🛠️ Affiliate Marketing
-- Recommend tools, books, software you genuinely use
-- Add affiliate links (Amazon, Notion, hosting providers)
-- **Earn 3–30% commission** on every sale
+### System & Media
+| Method | Endpoint | Auth | Description |
+| :--- | :--- | :---: | :--- |
+| `GET` | `/api/health` | ❌ | API Server healthcheck and timestamp |
+| `POST` | `/api/upload/image` | 🔒 | Upload single image attachment (Returns local link) |
 
 ---
 
 ## 🎨 Design System
 
-| Token | Light | Dark |
-|---|---|---|
-| Background | `#faf8f5` | `#0f0e0d` |
-| Card | `#ffffff` | `#1f1e1c` |
-| Text Primary | `#1c1917` | `#f5f0e8` |
-| Accent | `#7c3aed` | `#a78bfa` |
-| Border | `rgba(28,25,23,0.08)` | `rgba(245,240,232,0.07)` |
+Our interface utilizes a carefully selected warm, reader-focused palette:
 
-**Font Stack:**
-- Display: Playfair Display (headlines)
-- Body: Inter (UI, navigation)
-- Reading: Merriweather (article body)
+| Token | CSS Variable | Light Theme | Dark Theme | Purpose |
+| :--- | :--- | :---: | :---: | :--- |
+| **Background** | `--bg-primary` | `#faf8f5` | `#0f0e0d` | Screen canvas background |
+| **Card** | `--bg-card` | `#ffffff` | `#1f1e1c` | Surface cards & headers |
+| **Text Primary** | `--text-primary` | `#1c1917` | `#f5f0e8` | Reading & title typography |
+| **Accent** | `--accent` | `#7c3aed` | `#a78bfa` | Links, progress, active items |
+| **Border** | `--border-color` | `rgba(28,25,23,0.08)` | `rgba(245,240,232,0.07)` | Dividers and input boundaries |
+
+### Typography Stack
+*   **Headers & Titles**: `Playfair Display`, Georgia, serif (elegant, literary layout)
+*   **User Interface**: `Inter`, system-ui, sans-serif (clean, high-readability controls)
+*   **Article Reading Body**: `Merriweather`, Georgia, serif (optimized line heights for zero strain)
 
 ---
 
-## 🛡️ Security Notes
+## 🛡️ Production Security Checklist
 
-Before going to production:
-1. Change `JWT_SECRET` to a long random string
-2. Set `NODE_ENV=production`
-3. Add rate limiting: `npm install express-rate-limit`
-4. Use HTTPS (SSL via Let's Encrypt or platform-provided)
-5. Set `CORS` to your exact frontend domain
+Ensure the following precautions are taken before deployment to a production host:
+1.  **JWT Secret Security**: Replace `JWT_SECRET` in `.env` with a complex, cryptographically secure string.
+2.  **Environment Settings**: Set `NODE_ENV=production` to restrict detailed stack traces.
+3.  **Strict CORS Configuration**: Set backend `cors` origins to allow connections *only* from your active frontend domain.
+4.  **Rate Limiter Implementation**: Add `express-rate-limit` middleware on critical routes (`/api/auth/*` and `/api/upload/*`).
+5.  **SSL/TLS Security**: Configure production traffic to run exclusively over HTTPS.
+
+---
+
+## 🌐 Deployment Guides
+
+### Deploying to Railway (Recommended)
+
+1. Push your repository to GitHub.
+2. Log into [Railway.app](https://railway.app) and select **New Project** → **Deploy from GitHub Repo**.
+3. Create a **MongoDB Database** service instance inside the project.
+4. **Backend Setup**:
+   - Set the root directory configuration to `server`.
+   - Set the startup run script to `node index.js`.
+   - Setup environments variables: `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, `CLIENT_URL=https://your-frontend-url.com`.
+5. **Frontend Setup**:
+   - Add another service connecting the same repo, set root directory to `client`.
+   - Setup environments variables: `BACKEND_URL=https://your-backend-railway-url.app`.
+   - Set build settings: command `npm run build`, start command `npm run start`.
+
+---
+
+### Deploying to Render
+
+#### Backend Service
+1. Create a **Web Service** on Render pointing to your GitHub repository.
+2. Set Root Directory to `server`.
+3. Build Command: `npm install`
+4. Start Command: `node index.js`
+5. Configure your environmental variables (`MONGODB_URI`, `JWT_SECRET`, etc.).
+
+#### Frontend Web Service
+1. Create a **Web Service** (Node.js) on Render pointing to your GitHub repository.
+2. Set Root Directory to `client`.
+3. Build Command: `npm run build`
+4. Start Command: `npm run start`
+5. Add configuration environment variable: `BACKEND_URL=https://your-backend.onrender.com`.
+
+---
+
+## 💰 Monetization Playbook
+
+Since InkWell is designed as an independent portal, you own your monetization streams entirely:
+
+1.  **📧 Integrated Newsletter**: Embed a subscriber box to build a mailing list (e.g. ConvertKit, Beehiiv). A premium newsletter (charging $5–$15/mo) is a fast path to stable, recurring income.
+2.  **🤝 Sponsorships**: Showcase sponsors within niche posts (tech, design, finances) once your reader traffic reaches 5,000+ monthly visits.
+3.  **📚 Digital Products**: Link and upsell guides, ebooks, or templates directly from posts via platforms like Gumroad or Lemon Squeezy.
+4.  **💼 Consulting Funnels**: Leverage highly-detailed technical posts to advertise your professional services or custom dev contracts.
+5.  **💬 Paywall Subscriptions**: Lock premium articles behind a Stripe-integrated subscription middleware to monetize exclusive knowledge.
+6.  **📢 Clean Ads**: Monetize views using high-quality developer-focused networks (e.g. Carbon Ads) that match the platform design.
+7.  **🛠️ Affiliate Marketing**: Earn commission by linking tools, hosting, and books that you organically use and recommend.
 
 ---
 
 ## 📄 License
 
-MIT — Free to use, customize, and deploy as your own.
-
----
-
-*Built with ✦ for writers who care about their craft.*
+Distributed under the **MIT License**. Feel free to fork, customize, and monetize as your own platform.
