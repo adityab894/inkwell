@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Heart, Eye, Clock, Share2, Edit3, Trash2, ArrowLeft, BookOpen } from 'lucide-react';
+import { Heart, Eye, Clock, Share2, Edit3, Trash2, ArrowLeft } from 'lucide-react';
 import { formatDistanceToNow, format } from 'date-fns';
-import { useAuth } from '../../../context/AuthContext';
-import './ArticlePage.css';
+import { useAuth } from '@/context/AuthContext';
+import '@/styles/ArticlePage.css';
 
 export default function ArticlePage() {
   const { slug } = useParams();

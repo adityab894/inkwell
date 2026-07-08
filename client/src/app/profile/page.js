@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { User, Camera, Save } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import ProtectedRoute from '../../components/UI/ProtectedRoute';
-import '../login/Auth.css';
-import './Profile.css';
+import { useAuth } from '@/context/AuthContext';
+import ProtectedRoute from '@/components/UI/ProtectedRoute';
+import '@/styles/Auth.css';
+import '@/styles/Profile.css';
 
 function ProfileContent() {
   const { user, updateUser } = useAuth();

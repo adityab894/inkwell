@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Clock, Heart, Eye, BookOpen } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
-import './ArticleCard.css';
+import '@/styles/ArticleCard.css';
 
 const DOMAIN_EMOJIS = {
   technology: '💻', lifestyle: '✨', travel: '🌍', food: '🍜',

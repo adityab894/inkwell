@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Sun, Moon, PenLine, BookOpen, LayoutDashboard, LogOut, Menu, X, User } from 'lucide-react';
-import { useTheme } from '../../context/ThemeContext';
-import { useAuth } from '../../context/AuthContext';
-import './Navbar.css';
+import { useTheme } from '@/context/ThemeContext';
+import { useAuth } from '@/context/AuthContext';
+import '@/styles/Navbar.css';
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();

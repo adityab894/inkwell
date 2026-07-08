@@ -9,8 +9,8 @@ import {
   AlignLeft, Type, Palette, Layout, Bold, Italic,
   List, Quote, Code, Link2
 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
-import './Write.css';
+import { useAuth } from '@/context/AuthContext';
+import '@/styles/Write.css';
 
 const DOMAINS = ['technology','lifestyle','travel','food','health','finance','culture','science','personal','other'];
 const FONT_FAMILIES = [

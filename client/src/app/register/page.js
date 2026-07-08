@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Mail, Lock, User, Eye, EyeOff, FileText } from 'lucide-react';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/AuthContext';
-import '../login/Auth.css';
+import { useAuth } from '@/context/AuthContext';
+import '@/styles/Auth.css';
 
 export default function Register() {
   const { register } = useAuth();

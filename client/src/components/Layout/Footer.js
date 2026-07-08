@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import './Footer.css';
+import '@/styles/Footer.css';
 
 export default function Footer() {
   return (

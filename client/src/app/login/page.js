@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/AuthContext';
-import './Auth.css';
+import { useAuth } from '@/context/AuthContext';
+import '@/styles/Auth.css';
 
 function LoginForm() {
   const { login } = useAuth();

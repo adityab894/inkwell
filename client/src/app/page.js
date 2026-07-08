@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import { Search, ChevronDown, Sparkles, TrendingUp } from 'lucide-react';
-import ArticleCard from '../components/Cards/ArticleCard';
-import './Home.css';
+import { Search, Sparkles, TrendingUp } from 'lucide-react';
+import ArticleCard from '@/components/Cards/ArticleCard';
+import '@/styles/Home.css';
 
 const DOMAINS = [
   { value: 'all', label: 'All', emoji: '🌐' },

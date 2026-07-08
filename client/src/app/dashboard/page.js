@@ -6,9 +6,9 @@ import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 import { PenLine, Eye, Heart, Clock, Edit3, Trash2, BookOpen, FileText, TrendingUp } from 'lucide-react';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/AuthContext';
-import ProtectedRoute from '../../components/UI/ProtectedRoute';
-import './Dashboard.css';
+import { useAuth } from '@/context/AuthContext';
+import ProtectedRoute from '@/components/UI/ProtectedRoute';
+import '@/styles/Dashboard.css';
 
 function DashboardContent() {
   const { user } = useAuth();
