@@ -58,10 +58,7 @@ export default function Navbar() {
             </>
           )}
           {!isAuthenticated && (
-            <>
-              <Link href="/login" className="navbar__link">Log in</Link>
-              <Link href="/register" className="btn btn-primary btn-sm">Start Writing</Link>
-            </>
+            <Link href="/login?mode=signup" className="btn btn-primary btn-sm">Start Writing</Link>
           )}
         </div>
 
@@ -131,10 +128,7 @@ export default function Navbar() {
               </button>
             </>
           ) : (
-            <>
-              <Link href="/login" className="mobile-link">Log in</Link>
-              <Link href="/register" className="mobile-link mobile-link--accent">Start Writing</Link>
-            </>
+            <Link href="/login?mode=signup" className="mobile-link mobile-link--accent">Start Writing</Link>
           )}
           <div className="mobile-theme-row">
             <span>{isDark ? 'Dark mode' : 'Light mode'}</span>

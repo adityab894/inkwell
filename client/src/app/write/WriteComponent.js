@@ -5,7 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import {
-  Save, Send, Image, X,
+  Save, Send, Image, X, Eye,
   AlignLeft, Type, Palette, Layout, Bold, Italic,
   List, Quote, Code, Link2
 } from 'lucide-react';

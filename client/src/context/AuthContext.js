@@ -52,8 +52,8 @@ export const AuthProvider = ({ children }) => {
     return userData;
   };
 
-  const register = async (name, email, password, bio) => {
-    const res = await axios.post('/api/auth/register', { name, email, password, bio });
+  const register = async (name, email, password, bio, phone) => {
+    const res = await axios.post('/api/auth/register', { name, email, password, bio, phone });
     const { token: newToken, user: userData } = res.data;
     if (typeof window !== 'undefined') {
       localStorage.setItem('inkwell_token', newToken);
