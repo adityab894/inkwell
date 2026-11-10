@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 52" width="100%" height="100%">
+  <rect width="960" height="52" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <g transform="translate(14, 11)">
+    <rect width="40" height="30" rx="6" fill="#ede9fe" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#7c3aed" text-anchor="middle">06</text>
+  </g>
+  <text x="68" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#0f172a" letter-spacing="0.05em">QUICK START & LOCAL VERIFICATION</text>
+  <line x1="940" y1="26" x2="800" y2="26" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4"/>
+</svg>
