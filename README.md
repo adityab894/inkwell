@@ -9,7 +9,7 @@
 
 <a href="https://github.com/adityab894/inkwell"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GITHUB-adityab894%2Finkwell-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/GITHUB-adityab894%2Finkwell-ffffff?style=flat-square&logo=github&logoColor=000000" alt="GitHub Repo"/></picture></a>
 <a href="http://localhost:3000"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LIVE%20DEMO-localhost%3A3000-0d1117?style=flat-square&logo=googlechrome&logoColor=38bdf8"/><img src="https://img.shields.io/badge/LIVE%20DEMO-localhost%3A3000-ffffff?style=flat-square&logo=googlechrome&logoColor=0284c7" alt="Live Demo"/></picture></a>
-<a href="#pitch-guide"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff" alt="5-Minute Pitch Script"/></picture></a>
+<a href="#pitch-guide"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff" alt=""/></picture></a>
 <a href="#quick-start"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🚀%20QUICK%20START-1--MIN%20SETUP-059669?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/🚀%20QUICK%20START-1--MIN%20SETUP-059669?style=flat-square&logoColor=ffffff" alt="Quick Start"/></picture></a>
 <a href="https://github.com/adityab894"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/AUTHOR-Aditya%20Bisht-0d1117?style=flat-square&logo=github&logoColor=c084fc"/><img src="https://img.shields.io/badge/AUTHOR-Aditya%20Bisht-ffffff?style=flat-square&logo=github&logoColor=7c3aed" alt="Author"/></picture></a>
 
@@ -44,12 +44,15 @@
 </picture>
 
 ### 💡 The Problem: The Modern Developer Publishing Dilemma
+
 Technical writers and software engineers face a painful trade-off with existing blogging channels:
-* **Medium**: Paywalls block technical readers from inspecting code snippets and architecture diagrams.
-* **Substack**: Strictly an email newsletter tool — lacks syntax highlighting, code playgrounds, and technical categorization.
-* **Hashnode / Dev.to**: Cluttered with third-party platform branding, algorithmic noise, and unrelated non-technical fluff.
+
+- **Medium**: Paywalls block technical readers from inspecting code snippets and architecture diagrams.
+- **Substack**: Strictly an email newsletter tool — lacks syntax highlighting, code playgrounds, and technical categorization.
+- **Hashnode / Dev.to**: Cluttered with third-party platform branding, algorithmic noise, and unrelated non-technical fluff.
 
 ### ⚡ The Solution: InkWell
+
 **InkWell** is a specialized, open-source, reader-first technical publishing platform built with a high-performance **MERN stack (Next.js 16 App Router + Express.js + MongoDB Atlas)**. It eliminates algorithmic distractions and provides an uncompromising, distraction-free environment dedicated strictly to four technical domains:
 
 ```
@@ -75,12 +78,12 @@ Technical writers and software engineers face a painful trade-off with existing 
 
 InkWell features **24 production-grade technical articles** pre-ingested from top engineering authors, organized into four specialized tracks:
 
-| Track | Core Focus & Topics | Sample Featured Publications |
-| :--- | :--- | :--- |
-| **🤖 AI Engineering** | Autonomous AI Agents, Context Engineering, Model Context Protocol (MCP), LLM Prompt Loops | • *Ralph Wiggum Plugin for Claude Code: Autonomous Coding Guide*<br/>• *Claude Code Plan Mode: What's Missing and How to Fix It*<br/>• *Context Engineering: What You're Actually Doing*<br/>• *What Is OpenClaw? The Open-Source AI Agent* |
-| **🛠️ Development** | Modern Full-Stack Web Development, State Machines, Framework Alternatives, SDK Architectures | • *10 Best Lovable Alternatives in 2026 (Reviewed & Compared)*<br/>• *7 Best Replit Alternatives: Cloud vs Local Workflows*<br/>• *Learn to Use Supabase with Next.js*<br/>• *useState(): Understanding the Hook with Real State* |
-| **⚙️ DevOps & Cloud** | Agentic Tooling, Developer Environments, MCP Server Integration, Tool Automation | • *How to Add MCP Servers to Gemini CLI (Step-by-Step)*<br/>• *Claude Code MCP Servers: Complete Setup Guide (2026)*<br/>• *Why Package Managers Are the Backbone of DevOps* |
-| **🤝 DevRel & DX** | Technical Content Strategy, Developer Advocacy, Documentation Engineering, API Ergonomics | • *Optexity: The DevRel & Technical Content Strategy Field Guide*<br/>• *No One Told Me How to Do This, So I'm Telling You Instead* |
+| Track                 | Core Focus & Topics                                                                          | Sample Featured Publications                                                                                                                                                                                                                |
+| :-------------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **🤖 AI Engineering** | Autonomous AI Agents, Context Engineering, Model Context Protocol (MCP), LLM Prompt Loops    | • _Ralph Wiggum Plugin for Claude Code: Autonomous Coding Guide_<br/>• _Claude Code Plan Mode: What's Missing and How to Fix It_<br/>• _Context Engineering: What You're Actually Doing_<br/>• _What Is OpenClaw? The Open-Source AI Agent_ |
+| **🛠️ Development**    | Modern Full-Stack Web Development, State Machines, Framework Alternatives, SDK Architectures | • _10 Best Lovable Alternatives in 2026 (Reviewed & Compared)_<br/>• _7 Best Replit Alternatives: Cloud vs Local Workflows_<br/>• _Learn to Use Supabase with Next.js_<br/>• _useState(): Understanding the Hook with Real State_           |
+| **⚙️ DevOps & Cloud** | Agentic Tooling, Developer Environments, MCP Server Integration, Tool Automation             | • _How to Add MCP Servers to Gemini CLI (Step-by-Step)_<br/>• _Claude Code MCP Servers: Complete Setup Guide (2026)_<br/>• _Why Package Managers Are the Backbone of DevOps_                                                                |
+| **🤝 DevRel & DX**    | Technical Content Strategy, Developer Advocacy, Documentation Engineering, API Ergonomics    | • _Optexity: The DevRel & Technical Content Strategy Field Guide_<br/>• _No One Told Me How to Do This, So I'm Telling You Instead_                                                                                                         |
 
 <br/>
 
@@ -118,83 +121,29 @@ InkWell features **24 production-grade technical articles** pre-ingested from to
 </picture>
 
 ### 1. 🌓 True High-Contrast Dark Mode (Zero Fatigue)
+
 Unlike generic platforms that render dim gray body text on dark backgrounds, InkWell features an **adaptive CSS token system** enforcing pure white (`#ffffff` / `#f8fafc`) body typography in dark mode with a deep obsidian canvas (`#0f0e0d`).
 
 ### 2. ✍️ Natural LTR WYSIWYG Composer
-* **Non-destructive Caret Syncing:** Avoids the classic React `contentEditable` caret inversion bug by isolating active DOM focus from background state re-renders.
-* **Instant Media Replacement:** Click any image inside the editor to swap URLs or delete on the fly.
-* **Smart Reading Time Engine:** Real-time word calculation and reading minute estimator calculated live as you write.
+
+- **Non-destructive Caret Syncing:** Avoids the classic React `contentEditable` caret inversion bug by isolating active DOM focus from background state re-renders.
+- **Instant Media Replacement:** Click any image inside the editor to swap URLs or delete on the fly.
+- **Smart Reading Time Engine:** Real-time word calculation and reading minute estimator calculated live as you write.
 
 ### 3. 🎨 Author Typography & Layout Engine
+
 Writers have full control over the visual presentation of their essays without writing custom CSS:
-* **Font Stacks:** Georgia (Classic), Merriweather (Editorial), Lora (Literary), Inter (Clean), Playfair Display (Elegant).
-* **Layout Presets:** **Classic** (single column long-form), **Magazine** (feature editorial), **Minimal** (distraction-free markdown).
+
+- **Font Stacks:** Georgia (Classic), Merriweather (Editorial), Lora (Literary), Inter (Clean), Playfair Display (Elegant).
+- **Layout Presets:** **Classic** (single column long-form), **Magazine** (feature editorial), **Minimal** (distraction-free markdown).
 
 ### 4. 📊 Reader Telemetry & Analytics
-* **Live Heart Interactions:** Realistic engagement telemetry with randomized baseline likes (10–30 likes per article) and live toggle states.
-* **View Counter:** Increments on single article route access.
-* **Tag & Topic Taxonomy:** Multi-tag indexing and instant domain chip filtering.
 
-<br/>
+- **Live Heart Interactions:** Realistic engagement telemetry with randomized baseline likes (10–30 likes per article) and live toggle states.
+- **View Counter:** Increments on single article route access.
+- **Tag & Topic Taxonomy:** Multi-tag indexing and instant domain chip filtering.
 
----
-
-<div id="pitch-guide"></div>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/>
-  <img src="assets/s04.svg" alt="04 — The 5-Minute Live Demo Script & Narrative"/>
-</picture>
-
-> **Deliver an unforgettable 5-minute presentation using this structured walkthrough:**
-
-```
-⏱️ 5-MINUTE PITCH TIMELINE
-┌────────────────┬────────────────────────────────────────────────────────┐
-│ 00:00 - 01:00  │ 🎯 The Hook & The Problem in Technical Publishing     │
-├────────────────┼────────────────────────────────────────────────────────┤
-│ 01:00 - 02:00  │ 🌐 Live Reader Stream, Dark Mode & The 4 Tracks        │
-├────────────────┼────────────────────────────────────────────────────────┤
-│ 02:00 - 03:15  │ ✍️ In-Browser WYSIWYG Studio & Real-Time Styling       │
-├────────────────┼────────────────────────────────────────────────────────┤
-│ 03:15 - 04:15  │ 🛠️ Full-Stack Architecture & MongoDB Atlas Backend    │
-├────────────────┼────────────────────────────────────────────────────────┤
-│ 04:15 - 05:00  │ 🚀 Business Impact, Creator Ownership & Q&A Close     │
-└────────────────┴────────────────────────────────────────────────────────┘
-```
-
-#### 📍 Minute 0:00 – 1:00 | The Hook & Problem Statement
-* *"Good morning/afternoon everyone. Today, developers share their best architectural breakthroughs on platforms like Medium, Substack, and Dev.to. But they are trapped behind paywalls, noisy feeds, and zero control over their branding."*
-* *"This is **InkWell**: a high-signal, reader-first technical publishing platform built from the ground up for the four pillars of engineering: **AI, Development, DevOps, and DevRel**."*
-
-#### 📍 Minute 1:00 – 2:00 | The Reader Experience
-* **Action:** Open `http://localhost:3000`.
-* *"Notice the clarity of the interface. We have four dedicated technical channels. No fluff, no sponsored clickbait."*
-* **Action:** Toggle the **Dark Mode** switch in the top navigation.
-* *"Notice the dark mode typography: body text remains pure high-contrast white `#ffffff` on an obsidian backdrop, preventing eye fatigue during late-night reading."*
-* **Action:** Click into *"Ralph Wiggum Plugin for Claude Code"* or *"Optexity: The DevRel Guide"*.
-* *"Top reading progress gauge, auto-calculated read time, and inline high-resolution diagrams."*
-
-#### 📍 Minute 2:00 – 3:15 | The Creator Studio (Live Demo)
-* **Action:** Click the purple **"Write"** button in the header.
-* *"Now let's switch from reader to author. Here is our in-browser composing studio."*
-* **Action:** Type a title and paragraph (highlighting the fluid, natural typing).
-* *"Notice how we solved the notorious contentEditable caret jumping bug in React 19. Authors can upload local covers, paste direct image URLs, and adjust font sizes instantly."*
-* **Action:** Switch to the **Style** tab and demonstrate changing the font from *Georgia* to *Merriweather* and previewing the live article.
-
-#### 📍 Minute 3:15 – 4:15 | Full-Stack Engineering & Scalability
-* *"Under the hood, InkWell is built with a production-ready MERN architecture:"*
-  * **Frontend:** Next.js 16 App Router powered by Turbopack for sub-millisecond route transitions.
-  * **Backend:** Express.js REST API with JWT stateless authentication and role-based author authorization.
-  * **Database:** MongoDB Atlas cloud database storing articles, author references, custom layouts, and interaction telemetry.
-
-#### 📍 Minute 4:15 – 5:00 | Wrap-Up & Vision
-* *"InkWell gives software engineers and developer advocates 100% ownership of their technical voice, audience telemetry, and monetization potential."*
-* *"The repository is open-source, fully seeded with 24 technical articles, and ready to deploy in under two minutes. Thank you!"*
-
-<br/>
-
----
+## <br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/>
@@ -228,18 +177,18 @@ Writers have full control over the visual presentation of their essays without w
 
 ### 🔌 REST API Endpoints Overview
 
-| Method | Endpoint | Access | Purpose |
-| :--- | :--- | :---: | :--- |
-| `GET` | `/api/articles?page=1&limit=9` | Public | Paginated technical articles feed with domain & search filtering |
-| `GET` | `/api/articles/:slug` | Public | Fetch full article by slug & auto-increment read view counter |
-| `POST` | `/api/articles` | Author (JWT) | Create and publish a new technical article |
-| `PUT` | `/api/articles/:id` | Author (JWT) | Edit article content, cover image, or custom typography layout |
-| `DELETE` | `/api/articles/:id` | Author (JWT) | Remove article permanently |
-| `POST` | `/api/articles/:id/like` | User (JWT) | Toggle reactive heart like on an article |
-| `POST` | `/api/auth/register` | Public | Create new author account & receive JWT token |
-| `POST` | `/api/auth/login` | Public | Authenticate existing author |
-| `PUT` | `/api/auth/profile` | User (JWT) | Update author avatar image, bio, and display name |
-| `POST` | `/api/upload/image` | User (JWT) | Upload image attachments directly to disk storage |
+| Method   | Endpoint                       |    Access    | Purpose                                                          |
+| :------- | :----------------------------- | :----------: | :--------------------------------------------------------------- |
+| `GET`    | `/api/articles?page=1&limit=9` |    Public    | Paginated technical articles feed with domain & search filtering |
+| `GET`    | `/api/articles/:slug`          |    Public    | Fetch full article by slug & auto-increment read view counter    |
+| `POST`   | `/api/articles`                | Author (JWT) | Create and publish a new technical article                       |
+| `PUT`    | `/api/articles/:id`            | Author (JWT) | Edit article content, cover image, or custom typography layout   |
+| `DELETE` | `/api/articles/:id`            | Author (JWT) | Remove article permanently                                       |
+| `POST`   | `/api/articles/:id/like`       |  User (JWT)  | Toggle reactive heart like on an article                         |
+| `POST`   | `/api/auth/register`           |    Public    | Create new author account & receive JWT token                    |
+| `POST`   | `/api/auth/login`              |    Public    | Authenticate existing author                                     |
+| `PUT`    | `/api/auth/profile`            |  User (JWT)  | Update author avatar image, bio, and display name                |
+| `POST`   | `/api/upload/image`            |  User (JWT)  | Upload image attachments directly to disk storage                |
 
 <br/>
 
@@ -253,8 +202,9 @@ Writers have full control over the visual presentation of their essays without w
 </picture>
 
 ### 📋 Prerequisites
-* **Node.js**: v18.0.0 or higher
-* **MongoDB**: A local instance or free cloud cluster on [MongoDB Atlas](https://www.mongodb.com/atlas)
+
+- **Node.js**: v18.0.0 or higher
+- **MongoDB**: A local instance or free cloud cluster on [MongoDB Atlas](https://www.mongodb.com/atlas)
 
 ---
 
@@ -301,9 +251,11 @@ npm run dev
 ---
 
 ### Step 3: Default Author Login Credentials
+
 To test writing, publishing, and profile editing immediately:
-* **Email:** `adityabisht894@gmail.com`
-* **Password:** `password123` *(or create a new account in 5 seconds via `/register`)*
+
+- **Email:** `adityabisht894@gmail.com`
+- **Password:** `password123` _(or create a new account in 5 seconds via `/register`)_
 
 <br/>
 
@@ -311,11 +263,7 @@ To test writing, publishing, and profile editing immediately:
 
 <div align="center">
 
-### 👨‍💻 Author & Project Lead
-
-<a href="https://github.com/adityab894">
-  <img src="assets/avatar.png" width="90" height="90" style="border-radius: 50%; border: 3px solid #7c3aed; margin-bottom: 8px;" alt="Aditya Bisht" />
-</a>
+### 👨‍💻 Connect with me
 
 **Aditya Bisht**  
 Full-Stack Developer & Technical Content Engineer  
