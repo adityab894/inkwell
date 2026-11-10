@@ -13,15 +13,15 @@ export default function Footer() {
             <Link href="/" className="footer__logo">
               <span>✦</span> InkWell
             </Link>
-            <p className="footer__tagline">A space for thoughtful writing.<br />Where ideas find their voice.</p>
+            <p className="footer__tagline">The technical publishing platform.<br />Development, DevOps, AI & DevRel.</p>
           </div>
           <div className="footer__links">
             <div className="footer__col">
-              <h4>Read</h4>
-              <Link href="/?domain=technology">Technology</Link>
-              <Link href="/?domain=lifestyle">Lifestyle</Link>
-              <Link href="/?domain=travel">Travel</Link>
-              <Link href="/?domain=science">Science</Link>
+              <h4>Sections</h4>
+              <Link href="/?domain=development">Development</Link>
+              <Link href="/?domain=devops">DevOps</Link>
+              <Link href="/?domain=ai">AI</Link>
+              <Link href="/?domain=devrel">DevRel</Link>
             </div>
             <div className="footer__col">
               <h4>Write</h4>

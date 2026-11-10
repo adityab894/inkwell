@@ -115,7 +115,7 @@ export default function ArticlePage() {
         {/* Header */}
         <header className="article-header animate-fade-up">
           <div className="article-header__meta">
-            <span className="badge badge-accent" style={{ textTransform: 'capitalize' }}>
+            <span className={`badge badge-accent domain-${article.domain}`} style={{ textTransform: 'capitalize' }}>
               {article.domain}
             </span>
             {article.tags?.slice(0, 3).map(tag => (

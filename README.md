@@ -1,6 +1,6 @@
-# ✦ InkWell — Personalized Article Writing & Publishing Platform
+# ✦ InkWell — Technical Engineering, DevOps, AI & DevRel Platform
 
-> A beautifully designed, reader-first MERN stack blogging platform. Built with a modern Next.js 16 App Router frontend, a robust Express & MongoDB API server, and a fully customizable styling and typography system.
+> A specialized, reader-first MERN stack technical blogging platform. Built with a modern Next.js 16 App Router frontend, a robust Express & MongoDB API server, and a fully customizable styling and typography system configured specifically for technical sections: **Development**, **DevOps**, **AI**, and **DevRel**.
 
 ---
 
@@ -51,6 +51,11 @@ CLIENT_URL=http://localhost:3000
 Install backend dependencies:
 ```bash
 npm install
+```
+
+Upload / Seed technical articles into MongoDB:
+```bash
+npm run seed
 ```
 
 ---

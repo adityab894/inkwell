@@ -7,8 +7,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
-  title: "InkWell",
-  description: "InkWell — A personalized article writing and publishing platform",
+  title: "InkWell — Technical Engineering, DevOps, AI & DevRel Platform",
+  description: "InkWell — The premier publishing platform for developers, DevOps engineers, AI builders, and DevRel leaders.",
 };
 
 export default function RootLayout({ children }) {

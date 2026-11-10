@@ -7,9 +7,10 @@ import { formatDistanceToNow } from 'date-fns';
 import '@/styles/ArticleCard.css';
 
 const DOMAIN_EMOJIS = {
-  technology: '💻', lifestyle: '✨', travel: '🌍', food: '🍜',
-  health: '🌿', finance: '💰', culture: '🎭', science: '🔬',
-  personal: '📔', other: '📝'
+  development: '💻',
+  devops: '♾️',
+  ai: '🧠',
+  devrel: '🤝',
 };
 
 export default function ArticleCard({ article, index = 0, featured = false }) {

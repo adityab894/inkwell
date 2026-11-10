@@ -7,16 +7,11 @@ import ArticleCard from '@/components/Cards/ArticleCard';
 import '@/styles/Home.css';
 
 const DOMAINS = [
-  { value: 'all', label: 'All', emoji: '🌐' },
-  { value: 'technology', label: 'Tech', emoji: '💻' },
-  { value: 'lifestyle', label: 'Lifestyle', emoji: '✨' },
-  { value: 'travel', label: 'Travel', emoji: '🌍' },
-  { value: 'food', label: 'Food', emoji: '🍜' },
-  { value: 'health', label: 'Health', emoji: '🌿' },
-  { value: 'finance', label: 'Finance', emoji: '💰' },
-  { value: 'culture', label: 'Culture', emoji: '🎭' },
-  { value: 'science', label: 'Science', emoji: '🔬' },
-  { value: 'personal', label: 'Personal', emoji: '📔' },
+  { value: 'all', label: 'All Topics', emoji: '⚡' },
+  { value: 'development', label: 'Development', emoji: '💻' },
+  { value: 'devops', label: 'DevOps', emoji: '♾️' },
+  { value: 'ai', label: 'AI', emoji: '🧠' },
+  { value: 'devrel', label: 'DevRel', emoji: '🤝' },
 ];
 
 function SkeletonCard() {
@@ -90,14 +85,14 @@ export default function Home() {
           <div className="hero__content">
             <div className="hero__badge animate-fade-up">
               <Sparkles size={14} />
-              <span>A space for thoughtful writing</span>
+              <span>Full-Stack Technical Publishing</span>
             </div>
             <h1 className="hero__title animate-fade-up delay-100">
-              Where ideas find<br />
-              <span className="gradient-text">their voice</span>
+              Where technical ideas<br />
+              <span className="gradient-text">come to life</span>
             </h1>
             <p className="hero__subtitle animate-fade-up delay-200">
-              Discover beautifully written articles across technology, culture, travel, and the stories that move us.
+              In-depth articles, production playbooks, and architectural deep-dives across Development, DevOps, AI, and DevRel.
             </p>
 
             {/* Search */}
@@ -106,7 +101,7 @@ export default function Home() {
                 <Search size={18} className="search-icon" />
                 <input
                   type="text"
-                  placeholder="Search articles, topics, authors..."
+                  placeholder="Search development, devops, AI, devrel..."
                   value={searchInput}
                   onChange={e => setSearchInput(e.target.value)}
                   className="search-input"

@@ -11,8 +11,8 @@ const articleSchema = new mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   domain: {
     type: String,
-    enum: ['technology', 'lifestyle', 'travel', 'food', 'health', 'finance', 'culture', 'science', 'personal', 'other'],
-    default: 'other'
+    enum: ['development', 'devops', 'ai', 'devrel'],
+    default: 'development'
   },
   tags: [{ type: String, trim: true }],
   status: { type: String, enum: ['draft', 'published'], default: 'draft' },

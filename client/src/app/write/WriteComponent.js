@@ -12,7 +12,7 @@ import {
 import { useAuth } from '@/context/AuthContext';
 import '@/styles/Write.css';
 
-const DOMAINS = ['technology','lifestyle','travel','food','health','finance','culture','science','personal','other'];
+const DOMAINS = ['development', 'devops', 'ai', 'devrel'];
 const FONT_FAMILIES = [
   { label: 'Georgia (Classic)', value: 'Georgia, serif' },
   { label: 'Merriweather (Editorial)', value: "'Merriweather', serif" },
@@ -41,7 +41,7 @@ export default function WriteComponent() {
 
   const [form, setForm] = useState({
     title: '', subtitle: '', content: '', excerpt: '',
-    domain: 'personal', tags: [], status: 'draft', coverImage: '',
+    domain: 'development', tags: [], status: 'draft', coverImage: '',
     layout: {
       fontFamily: 'Georgia, serif',
       fontSize: 'medium',
@@ -74,7 +74,7 @@ export default function WriteComponent() {
         subtitle: a.subtitle || '',
         content: a.content || '',
         excerpt: a.excerpt || '',
-        domain: a.domain || 'personal',
+        domain: a.domain || 'development',
         tags: a.tags || [],
         status: a.status || 'draft',
         coverImage: a.coverImage || '',
