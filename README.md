@@ -1,301 +1,329 @@
-# ✦ InkWell — Technical Engineering, DevOps, AI & DevRel Platform
+<div align="center">
 
-> A specialized, reader-first MERN stack technical blogging platform. Built with a modern Next.js 16 App Router frontend, a robust Express & MongoDB API server, and a fully customizable styling and typography system configured specifically for technical sections: **Development**, **DevOps**, **AI**, and **DevRel**.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/header-dark.svg"/>
+  <img src="assets/header-light.svg" alt="InkWell — High-Signal Technical Publishing Platform"/>
+</picture>
+
+<br/>
+
+<a href="https://github.com/adityab894/inkwell"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GITHUB-adityab894%2Finkwell-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/GITHUB-adityab894%2Finkwell-ffffff?style=flat-square&logo=github&logoColor=000000" alt="GitHub Repo"/></picture></a>
+<a href="http://localhost:3000"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LIVE%20DEMO-localhost%3A3000-0d1117?style=flat-square&logo=googlechrome&logoColor=38bdf8"/><img src="https://img.shields.io/badge/LIVE%20DEMO-localhost%3A3000-ffffff?style=flat-square&logo=googlechrome&logoColor=0284c7" alt="Live Demo"/></picture></a>
+<a href="#pitch-guide"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/🎙️%205--MIN%20PITCH-GUIDE-7c3aed?style=flat-square&logoColor=ffffff" alt="5-Minute Pitch Script"/></picture></a>
+<a href="#quick-start"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🚀%20QUICK%20START-1--MIN%20SETUP-059669?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/🚀%20QUICK%20START-1--MIN%20SETUP-059669?style=flat-square&logoColor=ffffff" alt="Quick Start"/></picture></a>
+<a href="https://github.com/adityab894"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/AUTHOR-Aditya%20Bisht-0d1117?style=flat-square&logo=github&logoColor=c084fc"/><img src="https://img.shields.io/badge/AUTHOR-Aditya%20Bisht-ffffff?style=flat-square&logo=github&logoColor=7c3aed" alt="Author"/></picture></a>
+
+<br/><br/>
+
+<!-- Tech Badges Bar -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js%2016-App%20Router-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React%2019-Frontend-20232a?style=flat-square&logo=react&logoColor=61dafb" alt="React 19" />
+  <img src="https://img.shields.io/badge/Node.js-v18+-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express.js-REST%20API-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js" />
+  <img src="https://img.shields.io/badge/MongoDB-Atlas%20Cloud-47a248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
+  <img src="https://img.shields.io/badge/Turbopack-Ultra%20Fast-0284c7?style=flat-square&logo=turborepo&logoColor=white" alt="Turbopack" />
+  <img src="https://img.shields.io/badge/JWT-Stateless%20Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JWT Auth" />
+  <img src="https://img.shields.io/badge/License-MIT-f59e0b?style=flat-square" alt="License MIT" />
+</p>
+
+<!-- Live Application Dashboard Banner Preview -->
+<a href="http://localhost:3000">
+  <img src="assets/preview.png" width="100%" alt="InkWell Live Technical Publishing Platform Interface" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.35);" />
+</a>
+
+</div>
+
+<br/>
 
 ---
 
-## 📖 Table of Contents
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/>
+  <img src="assets/s01.svg" alt="01 — Executive Summary & The 5-Minute Pitch"/>
+</picture>
 
-- [🚀 Quick Start](#-quick-start)
-  - [Prerequisites](#prerequisites)
-  - [1. Backend Setup](#1-backend-setup)
-  - [2. Frontend Setup](#2-frontend-setup)
-  - [3. Running in Development](#3-running-in-development)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [📁 Project Structure](#-project-structure)
-- [✨ Key Features](#-key-features)
-- [🔌 API Endpoints](#-api-endpoints)
-- [🎨 Design System](#-design-system)
-- [🛡️ Production Security Checklist](#️-production-security-checklist)
-- [🌐 Deployment Guides](#-deployment-guides)
-- [💰 Monetization Playbook](#-monetization-playbook)
-- [📄 License](#-license)
+### 💡 The Problem: The Modern Developer Publishing Dilemma
+Technical writers and software engineers face a painful trade-off with existing blogging channels:
+* **Medium**: Paywalls block technical readers from inspecting code snippets and architecture diagrams.
+* **Substack**: Strictly an email newsletter tool — lacks syntax highlighting, code playgrounds, and technical categorization.
+* **Hashnode / Dev.to**: Cluttered with third-party platform branding, algorithmic noise, and unrelated non-technical fluff.
+
+### ⚡ The Solution: InkWell
+**InkWell** is a specialized, open-source, reader-first technical publishing platform built with a high-performance **MERN stack (Next.js 16 App Router + Express.js + MongoDB Atlas)**. It eliminates algorithmic distractions and provides an uncompromising, distraction-free environment dedicated strictly to four technical domains:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        ✦ INKWELL PLATFORM ✦                           │
+├─────────────────┬──────────────────┬─────────────────┬─────────────────┤
+│  🤖 AI          │  🛠️ DEVELOPMENT  │  ⚙️ DEVOPS       │  🤝 DEVREL      │
+│  Agents, MCPs,  │  React 19, Next, │  Docker, CI/CD, │  Tech Strategy, │
+│  Autonomous LLM │  Full-Stack SDKs │  Cloud & Infra  │  DX & Community │
+└─────────────────┴──────────────────┴─────────────────┴─────────────────┘
+```
+
+> **Zero Fluff Policy:** No lifestyle, food, or web3 spam. 100% focused on software engineering excellence and actionable knowledge.
+
+<br/>
 
 ---
 
-## 🚀 Quick Start
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/>
+  <img src="assets/s02.svg" alt="02 — The 4 Technical Engineering Tracks"/>
+</picture>
 
-### Prerequisites
-- **Node.js**: v18 or higher
-- **MongoDB**: Local installation or a [MongoDB Atlas](https://www.mongodb.com/atlas) cloud database.
+InkWell features **24 production-grade technical articles** pre-ingested from top engineering authors, organized into four specialized tracks:
+
+| Track | Core Focus & Topics | Sample Featured Publications |
+| :--- | :--- | :--- |
+| **🤖 AI Engineering** | Autonomous AI Agents, Context Engineering, Model Context Protocol (MCP), LLM Prompt Loops | • *Ralph Wiggum Plugin for Claude Code: Autonomous Coding Guide*<br/>• *Claude Code Plan Mode: What's Missing and How to Fix It*<br/>• *Context Engineering: What You're Actually Doing*<br/>• *What Is OpenClaw? The Open-Source AI Agent* |
+| **🛠️ Development** | Modern Full-Stack Web Development, State Machines, Framework Alternatives, SDK Architectures | • *10 Best Lovable Alternatives in 2026 (Reviewed & Compared)*<br/>• *7 Best Replit Alternatives: Cloud vs Local Workflows*<br/>• *Learn to Use Supabase with Next.js*<br/>• *useState(): Understanding the Hook with Real State* |
+| **⚙️ DevOps & Cloud** | Agentic Tooling, Developer Environments, MCP Server Integration, Tool Automation | • *How to Add MCP Servers to Gemini CLI (Step-by-Step)*<br/>• *Claude Code MCP Servers: Complete Setup Guide (2026)*<br/>• *Why Package Managers Are the Backbone of DevOps* |
+| **🤝 DevRel & DX** | Technical Content Strategy, Developer Advocacy, Documentation Engineering, API Ergonomics | • *Optexity: The DevRel & Technical Content Strategy Field Guide*<br/>• *No One Told Me How to Do This, So I'm Telling You Instead* |
+
+<br/>
+
+### 📸 Featured Article Showcase
+
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td width="33%" align="center">
+        <img src="assets/covers/ralph-wiggum-plugin.jpg" width="100%" style="border-radius: 8px;" alt="Ralph Wiggum Plugin" /><br/>
+        <b>🤖 Autonomous Loops</b><br/>
+        <sub>Ralph Wiggum for Claude Code</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="assets/covers/lovable-alternatives.jpg" width="100%" style="border-radius: 8px;" alt="Lovable Alternatives" /><br/>
+        <b>🛠️ Full-Stack Builders</b><br/>
+        <sub>10 Best Lovable Alternatives in 2026</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="assets/covers/gemini-mcp.jpg" width="100%" style="border-radius: 8px;" alt="Gemini CLI MCP" /><br/>
+        <b>⚙️ Cloud & Tooling</b><br/>
+        <sub>Adding MCP Servers to Gemini CLI</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
 
 ---
 
-### 1. Backend Setup
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/>
+  <img src="assets/s03.svg" alt="03 — Core Platform Innovations & Creator Toolbox"/>
+</picture>
 
-First, configure your environment variables:
+### 1. 🌓 True High-Contrast Dark Mode (Zero Fatigue)
+Unlike generic platforms that render dim gray body text on dark backgrounds, InkWell features an **adaptive CSS token system** enforcing pure white (`#ffffff` / `#f8fafc`) body typography in dark mode with a deep obsidian canvas (`#0f0e0d`).
+
+### 2. ✍️ Natural LTR WYSIWYG Composer
+* **Non-destructive Caret Syncing:** Avoids the classic React `contentEditable` caret inversion bug by isolating active DOM focus from background state re-renders.
+* **Instant Media Replacement:** Click any image inside the editor to swap URLs or delete on the fly.
+* **Smart Reading Time Engine:** Real-time word calculation and reading minute estimator calculated live as you write.
+
+### 3. 🎨 Author Typography & Layout Engine
+Writers have full control over the visual presentation of their essays without writing custom CSS:
+* **Font Stacks:** Georgia (Classic), Merriweather (Editorial), Lora (Literary), Inter (Clean), Playfair Display (Elegant).
+* **Layout Presets:** **Classic** (single column long-form), **Magazine** (feature editorial), **Minimal** (distraction-free markdown).
+
+### 4. 📊 Reader Telemetry & Analytics
+* **Live Heart Interactions:** Realistic engagement telemetry with randomized baseline likes (10–30 likes per article) and live toggle states.
+* **View Counter:** Increments on single article route access.
+* **Tag & Topic Taxonomy:** Multi-tag indexing and instant domain chip filtering.
+
+<br/>
+
+---
+
+<div id="pitch-guide"></div>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/>
+  <img src="assets/s04.svg" alt="04 — The 5-Minute Live Demo Script & Narrative"/>
+</picture>
+
+> **Deliver an unforgettable 5-minute presentation using this structured walkthrough:**
+
+```
+⏱️ 5-MINUTE PITCH TIMELINE
+┌────────────────┬────────────────────────────────────────────────────────┐
+│ 00:00 - 01:00  │ 🎯 The Hook & The Problem in Technical Publishing     │
+├────────────────┼────────────────────────────────────────────────────────┤
+│ 01:00 - 02:00  │ 🌐 Live Reader Stream, Dark Mode & The 4 Tracks        │
+├────────────────┼────────────────────────────────────────────────────────┤
+│ 02:00 - 03:15  │ ✍️ In-Browser WYSIWYG Studio & Real-Time Styling       │
+├────────────────┼────────────────────────────────────────────────────────┤
+│ 03:15 - 04:15  │ 🛠️ Full-Stack Architecture & MongoDB Atlas Backend    │
+├────────────────┼────────────────────────────────────────────────────────┤
+│ 04:15 - 05:00  │ 🚀 Business Impact, Creator Ownership & Q&A Close     │
+└────────────────┴────────────────────────────────────────────────────────┘
+```
+
+#### 📍 Minute 0:00 – 1:00 | The Hook & Problem Statement
+* *"Good morning/afternoon everyone. Today, developers share their best architectural breakthroughs on platforms like Medium, Substack, and Dev.to. But they are trapped behind paywalls, noisy feeds, and zero control over their branding."*
+* *"This is **InkWell**: a high-signal, reader-first technical publishing platform built from the ground up for the four pillars of engineering: **AI, Development, DevOps, and DevRel**."*
+
+#### 📍 Minute 1:00 – 2:00 | The Reader Experience
+* **Action:** Open `http://localhost:3000`.
+* *"Notice the clarity of the interface. We have four dedicated technical channels. No fluff, no sponsored clickbait."*
+* **Action:** Toggle the **Dark Mode** switch in the top navigation.
+* *"Notice the dark mode typography: body text remains pure high-contrast white `#ffffff` on an obsidian backdrop, preventing eye fatigue during late-night reading."*
+* **Action:** Click into *"Ralph Wiggum Plugin for Claude Code"* or *"Optexity: The DevRel Guide"*.
+* *"Top reading progress gauge, auto-calculated read time, and inline high-resolution diagrams."*
+
+#### 📍 Minute 2:00 – 3:15 | The Creator Studio (Live Demo)
+* **Action:** Click the purple **"Write"** button in the header.
+* *"Now let's switch from reader to author. Here is our in-browser composing studio."*
+* **Action:** Type a title and paragraph (highlighting the fluid, natural typing).
+* *"Notice how we solved the notorious contentEditable caret jumping bug in React 19. Authors can upload local covers, paste direct image URLs, and adjust font sizes instantly."*
+* **Action:** Switch to the **Style** tab and demonstrate changing the font from *Georgia* to *Merriweather* and previewing the live article.
+
+#### 📍 Minute 3:15 – 4:15 | Full-Stack Engineering & Scalability
+* *"Under the hood, InkWell is built with a production-ready MERN architecture:"*
+  * **Frontend:** Next.js 16 App Router powered by Turbopack for sub-millisecond route transitions.
+  * **Backend:** Express.js REST API with JWT stateless authentication and role-based author authorization.
+  * **Database:** MongoDB Atlas cloud database storing articles, author references, custom layouts, and interaction telemetry.
+
+#### 📍 Minute 4:15 – 5:00 | Wrap-Up & Vision
+* *"InkWell gives software engineers and developer advocates 100% ownership of their technical voice, audience telemetry, and monetization potential."*
+* *"The repository is open-source, fully seeded with 24 technical articles, and ready to deploy in under two minutes. Thank you!"*
+
+<br/>
+
+---
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/>
+  <img src="assets/s05.svg" alt="05 — Full-Stack MERN Architecture"/>
+</picture>
+
+```
+                       ┌───────────────────────────────┐
+                       │   Next.js 16 Client (React 19)│
+                       │   • App Router with Turbopack │
+                       │   • Adaptive Dark/Light Mode  │
+                       │   • Real-Time WYSIWYG Studio  │
+                       └──────────────┬────────────────┘
+                                      │ HTTP / JSON (Axios)
+                                      ▼
+                       ┌───────────────────────────────┐
+                       │   Express.js API (Node.js)    │
+                       │   • JWT Middleware Auth Shield│
+                       │   • Multer Multipart Uploads  │
+                       │   • Slugs & Read-Time Engine  │
+                       └──────────────┬────────────────┘
+                                      │ Mongoose ODM
+                                      ▼
+                       ┌───────────────────────────────┐
+                       │   MongoDB Atlas Cloud Cluster │
+                       │   • Articles (Schema & Layout)│
+                       │   • Users & Author Avatars    │
+                       │   • Interactive Like Telemetry│
+                       └───────────────────────────────┘
+```
+
+### 🔌 REST API Endpoints Overview
+
+| Method | Endpoint | Access | Purpose |
+| :--- | :--- | :---: | :--- |
+| `GET` | `/api/articles?page=1&limit=9` | Public | Paginated technical articles feed with domain & search filtering |
+| `GET` | `/api/articles/:slug` | Public | Fetch full article by slug & auto-increment read view counter |
+| `POST` | `/api/articles` | Author (JWT) | Create and publish a new technical article |
+| `PUT` | `/api/articles/:id` | Author (JWT) | Edit article content, cover image, or custom typography layout |
+| `DELETE` | `/api/articles/:id` | Author (JWT) | Remove article permanently |
+| `POST` | `/api/articles/:id/like` | User (JWT) | Toggle reactive heart like on an article |
+| `POST` | `/api/auth/register` | Public | Create new author account & receive JWT token |
+| `POST` | `/api/auth/login` | Public | Authenticate existing author |
+| `PUT` | `/api/auth/profile` | User (JWT) | Update author avatar image, bio, and display name |
+| `POST` | `/api/upload/image` | User (JWT) | Upload image attachments directly to disk storage |
+
+<br/>
+
+---
+
+<div id="quick-start"></div>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/>
+  <img src="assets/s06.svg" alt="06 — Quick Start & Local Verification"/>
+</picture>
+
+### 📋 Prerequisites
+* **Node.js**: v18.0.0 or higher
+* **MongoDB**: A local instance or free cloud cluster on [MongoDB Atlas](https://www.mongodb.com/atlas)
+
+---
+
+### Step 1: Configure & Start Backend Server
+
 ```bash
+# 1. Navigate to the server directory
 cd server
+
+# 2. Copy the environment template
 cp .env.example .env
-```
 
-Edit your `server/.env` configuration:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/inkwell
-JWT_SECRET=your_super_secret_key_change_this
-NODE_ENV=development
-CLIENT_URL=http://localhost:3000
-```
-
-Install backend dependencies:
-```bash
+# 3. Install dependencies
 npm install
-```
 
-Upload / Seed technical articles into MongoDB:
-```bash
+# 4. Seed 24 high-signal technical articles with covers & likes
 npm run seed
-```
 
----
-
-### 2. Frontend Setup
-
-Move to the client folder and install dependencies:
-```bash
-cd ../client
-npm install
-```
-
----
-
-### 3. Running in Development
-
-Run both the backend and frontend in separate terminal windows:
-
-**Terminal 1: Backend API Server**
-```bash
-cd server
+# 5. Start the backend server (runs on port 5000)
 npm run dev
 ```
-*Runs at:* `http://localhost:5000`
 
-**Terminal 2: Frontend App**
+> **Backend Verified:** API server connects to MongoDB Atlas at `http://localhost:5000`.
+
+---
+
+### Step 2: Start Frontend Application
+
+Open a second terminal window:
+
 ```bash
+# 1. Navigate to client directory
 cd client
+
+# 2. Install dependencies
+npm install
+
+# 3. Launch Next.js with Turbopack (runs on port 3000)
 npm run dev
 ```
-*Runs at:* `http://localhost:3000`
+
+> **Open in Browser:** Visit **`http://localhost:3000`** to explore the live application.
 
 ---
 
-## 🛠️ Tech Stack
+### Step 3: Default Author Login Credentials
+To test writing, publishing, and profile editing immediately:
+* **Email:** `adityabisht894@gmail.com`
+* **Password:** `password123` *(or create a new account in 5 seconds via `/register`)*
 
-### Frontend
-- **Framework**: Next.js 16 (App Router)
-- **UI & Logic**: React 19, Lucide React (Icons), React Toastify (Notifications)
-- **Animations**: Framer Motion
-- **Rich Text Editor**: Quill / React Quill
-- **Styling**: Vanilla CSS with modular stylesheets and custom design tokens
-
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB & Mongoose ODM
-- **Authentication**: JSON Web Tokens (JWT) & BcryptJS (Password hashing)
-- **File Uploads**: Multer (Local disk storage)
+<br/>
 
 ---
 
-## 📁 Project Structure
+<div align="center">
 
-```
-inkwell/
-├── server/                  # Node.js + Express API Backend
-│   ├── middleware/
-│   │   └── auth.js          # JWT authentication checks
-│   ├── models/
-│   │   ├── User.js          # User profile and auth schema
-│   │   └── Article.js       # Article fields, layout configuration, likes, views
-│   ├── routes/
-│   │   ├── auth.js          # Authentication, Profile and User endpoint routes
-│   │   ├── articles.js      # Article CRUD, filters, and like endpoints
-│   │   └── upload.js        # File uploading configuration
-│   ├── uploads/             # Destination for uploaded images
-│   ├── .env.example         # Template for environment settings
-│   ├── index.js             # API entrypoint and database connection
-│   └── package.json         # Backend dependencies
-│
-└── client/                  # Next.js App Router Frontend
-    ├── public/              # Static files
-    └── src/
-        ├── app/             # Application pages
-        │   ├── article/
-        │   │   └── [slug]/  # Immersive article viewer (dynamic route)
-        │   ├── dashboard/   # Content publisher metrics dashboard
-        │   ├── login/       # Author login
-        │   ├── profile/     # Settings & biography customizations
-        │   ├── register/    # New author onboarding
-        │   ├── write/       # Dynamic composition interface
-        │   ├── layout.js    # Layout wrapper with Context providers
-        │   ├── page.js      # Main reading stream landing
-        │   └── globals.css  # Layout directives and page transitions
-        ├── components/      # Shared components
-        │   ├── Cards/
-        │   │   └── ArticleCard.js  # Interactive article cards
-        │   ├── Layout/
-        │   │   ├── Footer.js
-        │   │   └── Navbar.js       # Dynamic navigation header
-        │   └── UI/
-        │       └── ProtectedRoute.js # Interactive client-side router shield
-        ├── context/         # React Context stores
-        │   ├── AuthContext.js  # Global auth status
-        │   └── ThemeContext.js # Global active theme store (Light/Dark)
-        └── styles/          # Modular component stylesheet layers
-            ├── ArticleCard.css
-            ├── ArticlePage.css
-            ├── Auth.css
-            ├── Dashboard.css
-            ├── Footer.css
-            ├── Home.css
-            ├── Navbar.css
-            ├── Profile.css
-            └── Write.css
-```
+### 👨‍💻 Author & Project Lead
 
----
+<a href="https://github.com/adityab894">
+  <img src="assets/avatar.png" width="90" height="90" style="border-radius: 50%; border: 3px solid #7c3aed; margin-bottom: 8px;" alt="Aditya Bisht" />
+</a>
 
-## ✨ Key Features
+**Aditya Bisht**  
+Full-Stack Developer & Technical Content Engineer  
+[![GitHub](https://img.shields.io/badge/GitHub-adityab894-181717?style=flat-square&logo=github)](https://github.com/adityab894)
+[![Email](https://img.shields.io/badge/Email-adityabisht894%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:adityabisht894@gmail.com)
 
-### 📖 Reader Experience
-*   **🌓 Adaptive Dark Mode**: Detects system preferences automatically and preserves choice across active sessions.
-*   **⚡ Smart Reading Gauge**: Top-pinned scrolling progress line keeps readers oriented.
-*   **🔍 Granular Filters**: Search index covering titles, summaries, specific domains, and tag groups.
-*   **❤️ Micro-Animated Interactions**: Engaging like animations and transitions for responsive feedback.
-*   **📱 Responsive Layouts**: Fluid design prioritizing readability on viewport scales from mobile to desktop.
-*   **🎨 High-Readability Fonts**: Optimized typography featuring serif body fonts for comfortable long-form reading.
+<br/>
 
-### ✍️ Publisher Toolbox
-*   **📝 Powerful Composer**: Rich text formatting options: headings, bold/italic, lists, link attachments, blockquotes, and code elements.
-*   **🖼️ Media Library Integration**: Cover image upload and body-inserted images powered by direct API uploads.
-*   **🎨 Custom Stylers**: Custom options for font families, sizing, line-height, and primary accents.
-*   **📐 Layout Presets**: Choose between **Classic**, **Magazine**, and **Minimal** page templates.
-*   **🏷️ Structured Classification**: Categorize content with custom tags and root domains.
-*   **👁️ True Live Preview**: Real-time styling view matches the exact final published result.
-*   **📊 Analytics Dashboard**: Track total article reach, individual view counts, and total reader likes.
+<sub>Distributed under the **MIT License**. Crafted for the 5-Minute Technical Pitch.</sub>
 
----
-
-## 🔌 API Endpoints
-
-### Authentication & Profile
-| Method | Endpoint | Auth | Description |
-| :--- | :--- | :---: | :--- |
-| `POST` | `/api/auth/register` | ❌ | Create a new user account & return JWT |
-| `POST` | `/api/auth/login` | ❌ | Authenticate credentials & return JWT |
-| `GET` | `/api/auth/me` | 🔒 | Fetch logged-in user details |
-| `PUT` | `/api/auth/profile` | 🔒 | Update name, biography, or user avatar |
-
-### Articles
-| Method | Endpoint | Auth | Description |
-| :--- | :--- | :---: | :--- |
-| `GET` | `/api/articles` | ❌ | Fetch all published articles (with search, domain, and tag filters) |
-| `GET` | `/api/articles/my` | 🔒 | Fetch author's draft/published articles for Dashboard |
-| `GET` | `/api/articles/:slug` | ❌ / 🔒 | Fetch single article by slug (Increment views count) |
-| `POST` | `/api/articles` | 🔒 | Save a new draft or publish an article |
-| `PUT` | `/api/articles/:id` | 🔒 | Update article metadata or body content (Author only) |
-| `DELETE` | `/api/articles/:id` | 🔒 | Permanently remove an article (Author only) |
-| `POST` | `/api/articles/:id/like` | 🔒 | Toggle user like status on an article |
-
-### System & Media
-| Method | Endpoint | Auth | Description |
-| :--- | :--- | :---: | :--- |
-| `GET` | `/api/health` | ❌ | API Server healthcheck and timestamp |
-| `POST` | `/api/upload/image` | 🔒 | Upload single image attachment (Returns local link) |
-
----
-
-## 🎨 Design System
-
-Our interface utilizes a carefully selected warm, reader-focused palette:
-
-| Token | CSS Variable | Light Theme | Dark Theme | Purpose |
-| :--- | :--- | :---: | :---: | :--- |
-| **Background** | `--bg-primary` | `#faf8f5` | `#0f0e0d` | Screen canvas background |
-| **Card** | `--bg-card` | `#ffffff` | `#1f1e1c` | Surface cards & headers |
-| **Text Primary** | `--text-primary` | `#1c1917` | `#f5f0e8` | Reading & title typography |
-| **Accent** | `--accent` | `#7c3aed` | `#a78bfa` | Links, progress, active items |
-| **Border** | `--border-color` | `rgba(28,25,23,0.08)` | `rgba(245,240,232,0.07)` | Dividers and input boundaries |
-
-### Typography Stack
-*   **Headers & Titles**: `Playfair Display`, Georgia, serif (elegant, literary layout)
-*   **User Interface**: `Inter`, system-ui, sans-serif (clean, high-readability controls)
-*   **Article Reading Body**: `Merriweather`, Georgia, serif (optimized line heights for zero strain)
-
----
-
-## 🛡️ Production Security Checklist
-
-Ensure the following precautions are taken before deployment to a production host:
-1.  **JWT Secret Security**: Replace `JWT_SECRET` in `.env` with a complex, cryptographically secure string.
-2.  **Environment Settings**: Set `NODE_ENV=production` to restrict detailed stack traces.
-3.  **Strict CORS Configuration**: Set backend `cors` origins to allow connections *only* from your active frontend domain.
-4.  **Rate Limiter Implementation**: Add `express-rate-limit` middleware on critical routes (`/api/auth/*` and `/api/upload/*`).
-5.  **SSL/TLS Security**: Configure production traffic to run exclusively over HTTPS.
-
----
-
-## 🌐 Deployment Guides
-
-### Deploying to Railway (Recommended)
-
-1. Push your repository to GitHub.
-2. Log into [Railway.app](https://railway.app) and select **New Project** → **Deploy from GitHub Repo**.
-3. Create a **MongoDB Database** service instance inside the project.
-4. **Backend Setup**:
-   - Set the root directory configuration to `server`.
-   - Set the startup run script to `node index.js`.
-   - Setup environments variables: `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, `CLIENT_URL=https://your-frontend-url.com`.
-5. **Frontend Setup**:
-   - Add another service connecting the same repo, set root directory to `client`.
-   - Setup environments variables: `BACKEND_URL=https://your-backend-railway-url.app`.
-   - Set build settings: command `npm run build`, start command `npm run start`.
-
----
-
-### Deploying to Render
-
-#### Backend Service
-1. Create a **Web Service** on Render pointing to your GitHub repository.
-2. Set Root Directory to `server`.
-3. Build Command: `npm install`
-4. Start Command: `node index.js`
-5. Configure your environmental variables (`MONGODB_URI`, `JWT_SECRET`, etc.).
-
-#### Frontend Web Service
-1. Create a **Web Service** (Node.js) on Render pointing to your GitHub repository.
-2. Set Root Directory to `client`.
-3. Build Command: `npm run build`
-4. Start Command: `npm run start`
-5. Add configuration environment variable: `BACKEND_URL=https://your-backend.onrender.com`.
-
----
-
-## 💰 Monetization Playbook
-
-Since InkWell is designed as an independent portal, you own your monetization streams entirely:
-
-1.  **📧 Integrated Newsletter**: Embed a subscriber box to build a mailing list (e.g. ConvertKit, Beehiiv). A premium newsletter (charging $5–$15/mo) is a fast path to stable, recurring income.
-2.  **🤝 Sponsorships**: Showcase sponsors within niche posts (tech, design, finances) once your reader traffic reaches 5,000+ monthly visits.
-3.  **📚 Digital Products**: Link and upsell guides, ebooks, or templates directly from posts via platforms like Gumroad or Lemon Squeezy.
-4.  **💼 Consulting Funnels**: Leverage highly-detailed technical posts to advertise your professional services or custom dev contracts.
-5.  **💬 Paywall Subscriptions**: Lock premium articles behind a Stripe-integrated subscription middleware to monetize exclusive knowledge.
-6.  **📢 Clean Ads**: Monetize views using high-quality developer-focused networks (e.g. Carbon Ads) that match the platform design.
-7.  **🛠️ Affiliate Marketing**: Earn commission by linking tools, hosting, and books that you organically use and recommend.
-
----
-
-## 📄 License
-
-Distributed under the **MIT License**. Feel free to fork, customize, and monetize as your own platform.
+</div>
