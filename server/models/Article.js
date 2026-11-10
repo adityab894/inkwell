@@ -23,7 +23,7 @@ const articleSchema = new mongoose.Schema({
   layout: {
     fontFamily: { type: String, default: 'Georgia' },
     fontSize: { type: String, default: 'medium' },
-    textColor: { type: String, default: '#1a1a1a' },
+    textColor: { type: String, default: '' },
     accentColor: { type: String, default: '#6366f1' },
     layoutStyle: { type: String, default: 'classic' }
   },

@@ -83,3 +83,15 @@
   .footer__inner { flex-direction: column; gap: 32px; }
   .footer__bottom { flex-direction: column; text-align: center; }
 }
+
+[data-theme="dark"] .footer__col a {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .footer__col a:hover {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer__logo {
+  color: #ffffff;
+}

@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { User, Camera, Save } from 'lucide-react';
+import { User, Camera, Save, UploadCloud } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import ProtectedRoute from '@/components/UI/ProtectedRoute';
 import '@/styles/Auth.css';
@@ -13,6 +13,27 @@ function ProfileContent() {
   const { user, updateUser } = useAuth();
   const [form, setForm] = useState({ name: user?.name || '', bio: user?.bio || '', avatar: user?.avatar || '' });
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef(null);
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append('image', file);
+    setUploading(true);
+    try {
+      const res = await axios.post('/api/upload/image', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      setForm(f => ({ ...f, avatar: res.data.url }));
+      toast.success('Image uploaded! Click Save to apply.');
+    } catch {
+      toast.error('Failed to upload image');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +58,12 @@ function ProfileContent() {
         <div className="profile-card animate-scale-in delay-200">
           {/* Avatar Preview */}
           <div className="profile-avatar-section">
-            <div className="profile-avatar">
+            <div
+              className="profile-avatar"
+              onClick={() => fileInputRef.current?.click()}
+              style={{ cursor: 'pointer' }}
+              title="Click to upload profile photo"
+            >
               {form.avatar ? (
                 <img src={form.avatar} alt={form.name} />
               ) : (
@@ -47,6 +73,22 @@ function ProfileContent() {
             <div className="profile-avatar-info">
               <strong>{form.name || 'Your Name'}</strong>
               <span>{user?.email}</span>
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                style={{ marginTop: '8px', fontSize: '0.8rem', padding: '4px 12px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+              >
+                <UploadCloud size={14} /> {uploading ? 'Uploading…' : 'Upload Photo'}
+              </button>
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileUpload}
+                accept="image/*"
+                style={{ display: 'none' }}
+              />
             </div>
           </div>
 

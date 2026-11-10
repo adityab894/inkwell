@@ -85,10 +85,27 @@ export default function WriteComponent() {
       const words = text ? text.split(/\s+/).length : 0;
       setWordCount(words);
       setReadTime(Math.max(1, Math.ceil(words / 200)));
+      if (editorRef.current) {
+        editorRef.current.innerHTML = a.content || '';
+      }
     } catch {
       toast.error('Failed to load article');
     }
   };
+
+  // Safely synchronize editor innerHTML when switching panels or loading data,
+  // without resetting caret/selection while the user is actively typing.
+  useEffect(() => {
+    if (activePanel === 'write' && editorRef.current) {
+      const isFocused = typeof document !== 'undefined' && (
+        document.activeElement === editorRef.current ||
+        editorRef.current.contains(document.activeElement)
+      );
+      if (!isFocused && editorRef.current.innerHTML !== form.content) {
+        editorRef.current.innerHTML = form.content || '';
+      }
+    }
+  }, [activePanel, form.content]);
 
   const updateContent = useCallback((html) => {
     setForm(f => ({ ...f, content: html }));
@@ -115,6 +132,29 @@ export default function WriteComponent() {
   const insertLink = () => {
     const url = prompt('Enter URL:');
     if (url) handleExecCommand('createLink', url);
+  };
+
+  const insertImageUrl = () => {
+    const url = prompt('Enter Image URL:');
+    if (url && url.trim()) {
+      handleExecCommand('insertImage', url.trim());
+    }
+  };
+
+  const handleEditorClick = (e) => {
+    if (e.target && e.target.tagName === 'IMG') {
+      const currentSrc = e.target.getAttribute('src') || '';
+      const newSrc = prompt('Edit image URL (or clear input and click OK to delete image):', currentSrc);
+      if (newSrc === null) return;
+      if (newSrc.trim() === '') {
+        e.target.remove();
+        toast.info('Image removed');
+      } else {
+        e.target.setAttribute('src', newSrc.trim());
+        toast.success('Image updated');
+      }
+      handleEditorInput();
+    }
   };
 
   const handleImageUpload = async (file) => {
@@ -231,21 +271,48 @@ export default function WriteComponent() {
           <div className="write-panel animate-fade-in">
             <div className="write-editor-wrap">
               {/* Cover Image */}
-              <div className="cover-upload" onClick={() => coverRef.current?.click()}>
-                {form.coverImage ? (
-                  <div className="cover-preview">
-                    <img src={form.coverImage} alt="Cover" />
-                    <button className="cover-remove" onClick={e => { e.stopPropagation(); setForm(f => ({ ...f, coverImage: '' })); }}>
-                      <X size={16} />
+              <div className="cover-upload-section">
+                <div className="cover-upload" onClick={() => coverRef.current?.click()}>
+                  {form.coverImage ? (
+                    <div className="cover-preview">
+                      <img src={form.coverImage} alt="Cover" />
+                      <button
+                        type="button"
+                        className="cover-remove"
+                        onClick={e => { e.stopPropagation(); setForm(f => ({ ...f, coverImage: '' })); }}
+                        title="Remove cover image"
+                      >
+                        <X size={16} />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="cover-placeholder">
+                      <Image size={24} />
+                      <span>Click to upload cover image file</span>
+                    </div>
+                  )}
+                  <input ref={coverRef} type="file" accept="image/*" hidden onChange={handleCoverUpload} />
+                </div>
+                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
+                  <input
+                    type="url"
+                    className="input"
+                    placeholder="Or paste cover image URL (e.g. Unsplash, GitHub, or direct link)..."
+                    value={form.coverImage}
+                    onChange={e => setForm(f => ({ ...f, coverImage: e.target.value }))}
+                    style={{ fontSize: '0.84rem', padding: '8px 14px' }}
+                  />
+                  {form.coverImage && (
+                    <button
+                      type="button"
+                      className="btn btn-secondary btn-sm"
+                      onClick={() => setForm(f => ({ ...f, coverImage: '' }))}
+                      style={{ padding: '6px 12px', fontSize: '0.8rem' }}
+                    >
+                      Clear
                     </button>
-                  </div>
-                ) : (
-                  <div className="cover-placeholder">
-                    <Image size={24} />
-                    <span>Add a cover image</span>
-                  </div>
-                )}
-                <input ref={coverRef} type="file" accept="image/*" hidden onChange={handleCoverUpload} />
+                  )}
+                </div>
               </div>
 
               {/* Domain & Tags */}
@@ -282,19 +349,23 @@ export default function WriteComponent() {
               {/* Title */}
               <textarea
                 className="title-input"
+                dir="ltr"
                 placeholder="Article title…"
                 value={form.title}
                 onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                 rows={2}
+                style={{ direction: 'ltr', textAlign: 'left' }}
               />
 
               {/* Subtitle */}
               <input
                 type="text"
                 className="subtitle-input"
+                dir="ltr"
                 placeholder="Add a subtitle (optional)…"
                 value={form.subtitle}
                 onChange={e => setForm(f => ({ ...f, subtitle: e.target.value }))}
+                style={{ direction: 'ltr', textAlign: 'left' }}
               />
 
               {/* Toolbar */}
@@ -330,8 +401,11 @@ export default function WriteComponent() {
                 </div>
                 <div className="toolbar-sep" />
                 <div className="toolbar-group">
-                  <button className="toolbar-btn" onClick={() => fileRef.current?.click()} title="Insert image">
+                  <button className="toolbar-btn" onClick={() => fileRef.current?.click()} title="Upload image from computer">
                     <Image size={15} />
+                  </button>
+                  <button className="toolbar-btn" onClick={insertImageUrl} title="Insert image from URL">
+                    <Link2 size={13} /><Image size={13} style={{ marginLeft: '-4px' }} />
                   </button>
                   <input
                     ref={fileRef}
@@ -349,14 +423,17 @@ export default function WriteComponent() {
                 className="rich-editor"
                 contentEditable
                 suppressContentEditableWarning
+                dir="ltr"
                 onInput={handleEditorInput}
+                onClick={handleEditorClick}
                 data-placeholder="Start writing your story…"
                 style={{
                   fontFamily: form.layout.fontFamily,
                   fontSize: fontSizeMap[form.layout.fontSize],
-                  color: form.layout.textColor
+                  color: form.layout.textColor || 'var(--text-primary)',
+                  direction: 'ltr',
+                  textAlign: 'left'
                 }}
-                dangerouslySetInnerHTML={{ __html: form.content }}
               />
             </div>
           </div>

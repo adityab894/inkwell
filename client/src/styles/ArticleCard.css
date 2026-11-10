@@ -223,3 +223,20 @@
 /* Featured variant */
 .article-card--featured .article-card__title { font-size: 1.3rem; -webkit-line-clamp: 3; }
 .article-card--featured .article-card__image-wrap { aspect-ratio: 16/9; }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .article-card__title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .article-card__excerpt {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .author-name {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .author-date {
+  color: #94a3b8 !important;
+}

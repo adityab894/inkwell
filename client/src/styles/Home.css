@@ -325,3 +325,26 @@
   .hero__title { font-size: 2.4rem; }
   .articles-grid { grid-template-columns: 1fr; }
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .hero__title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .hero__subtitle {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .filter-chip {
+  color: #e2e8f0 !important;
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .filter-chip--active {
+  color: #ffffff !important;
+  background: var(--accent) !important;
+}
+
+[data-theme="dark"] .section-title {
+  color: #ffffff !important;
+}

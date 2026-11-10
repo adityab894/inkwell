@@ -54,9 +54,9 @@
   --bg-card: #1f1e1c;
   --bg-overlay: rgba(15, 14, 13, 0.96);
 
-  --text-primary: #f5f0e8;
-  --text-secondary: #a8a29e;
-  --text-muted: #57534e;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --text-inverse: #0f0e0d;
 
   --accent: #a78bfa;
@@ -290,6 +290,17 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text-primary);
 }
 
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .btn-sm { padding: 6px 14px; font-size: 0.82rem; }
 .btn-lg { padding: 14px 32px; font-size: 1rem; }
 
@@ -519,6 +530,63 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: underline;
   text-underline-offset: 3px;
   color: var(--accent);
+}
+
+/* ============================================
+   DARK MODE ARTICLE TYPOGRAPHY — PURE WHITE
+   ============================================ */
+
+[data-theme="dark"] .article-body,
+[data-theme="dark"] .article-body p,
+[data-theme="dark"] .article-body li,
+[data-theme="dark"] .article-body ul,
+[data-theme="dark"] .article-body ol,
+[data-theme="dark"] .article-body div:not([class*="badge"]):not([class*="domain"]),
+[data-theme="dark"] .article-body td,
+[data-theme="dark"] .article-body th,
+[data-theme="dark"] .article-body span:not([class*="badge"]):not([class*="domain"]):not([class*="tag"]) {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .article-body h1,
+[data-theme="dark"] .article-body h2,
+[data-theme="dark"] .article-body h3,
+[data-theme="dark"] .article-body h4,
+[data-theme="dark"] .article-body h5,
+[data-theme="dark"] .article-body h6,
+[data-theme="dark"] .article-body strong,
+[data-theme="dark"] .article-body b {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .article-body em,
+[data-theme="dark"] .article-body i {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .article-body blockquote {
+  color: #f8fafc !important;
+  background: rgba(167, 139, 250, 0.1) !important;
+  border-left-color: var(--accent) !important;
+}
+
+[data-theme="dark"] .article-body pre {
+  background: #141312 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .article-body pre code {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .article-body code:not(pre code) {
+  background: rgba(167, 139, 250, 0.15) !important;
+  color: #c4b5fd !important;
+  border-color: rgba(167, 139, 250, 0.25) !important;
+}
+
+[data-theme="dark"] .article-body a {
+  color: #a78bfa !important;
 }
 
 /* ============================================

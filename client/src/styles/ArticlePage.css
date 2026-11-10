@@ -244,3 +244,29 @@
   .article-byline { flex-direction: column; align-items: flex-start; }
   .article-actions { width: 100%; justify-content: flex-start; }
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .article-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .article-subtitle {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .article-author__info strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .author-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .author-card__name {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .author-card__bio {
+  color: #cbd5e1 !important;
+}

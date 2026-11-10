@@ -23,10 +23,11 @@ async function seed() {
     if (!author) {
       console.log('No user found in database. Creating default author...');
       author = new User({
-        name: 'Vanshika Rana',
-        email: 'vanshika@inkwell.dev',
+        name: 'Aditya Bisht',
+        email: 'adityabisht894@gmail.com',
+        avatar: '/avatar.png',
         password: 'password123',
-        bio: 'Developer Relations Engineer & AI Builder. Writing about Development, DevOps, AI, and DevRel.',
+        bio: 'Developer Relations Engineer & Technical Writer. Writing about Development, DevOps, AI, and DevRel.',
         role: 'author'
       });
       await author.save();
@@ -62,10 +63,16 @@ async function seed() {
         existing.tags = data.tags || [data.domain];
         existing.status = 'published';
         existing.readTime = data.readTime || 5;
+        if (data.likes && Array.isArray(data.likes) && data.likes.length > 0) {
+          existing.likes = data.likes.map(id => new mongoose.Types.ObjectId(id));
+        }
         existing.publishedAt = data.publishedAt ? new Date(data.publishedAt) : new Date();
         await existing.save();
         console.log(`Updated [${data.domain}] ${data.title}`);
       } else {
+        const initialLikes = data.likes && Array.isArray(data.likes) && data.likes.length > 0
+          ? data.likes.map(id => new mongoose.Types.ObjectId(id))
+          : Array.from({ length: Math.floor(Math.random() * 21) + 10 }, () => new mongoose.Types.ObjectId());
         const article = new Article({
           title: data.title,
           slug,
@@ -79,11 +86,11 @@ async function seed() {
           status: 'published',
           readTime: data.readTime || 5,
           views: Math.floor(Math.random() * 450) + 50,
-          likes: [author._id],
+          likes: initialLikes,
           layout: {
             fontFamily: 'Georgia, serif',
             fontSize: 'medium',
-            textColor: '#1a1a1a',
+            textColor: '',
             accentColor: '#7c3aed',
             layoutStyle: 'classic'
           },

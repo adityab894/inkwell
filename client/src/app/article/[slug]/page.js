@@ -8,11 +8,13 @@ import { toast } from 'react-toastify';
 import { Heart, Eye, Clock, Share2, Edit3, Trash2, ArrowLeft } from 'lucide-react';
 import { formatDistanceToNow, format } from 'date-fns';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 import '@/styles/ArticlePage.css';
 
 export default function ArticlePage() {
   const { slug } = useParams();
   const { user, isAuthenticated } = useAuth();
+  const { isDark } = useTheme();
   const router = useRouter();
 
   const [article, setArticle] = useState(null);
@@ -98,7 +100,13 @@ export default function ArticlePage() {
 
   if (!article) return null;
 
-  const isAuthor = user && article.author?._id === user._id;
+  const isAuthor = Boolean(
+    user && (
+      String(article.author?._id) === String(user._id) ||
+      user.role === 'admin' ||
+      user.email === 'adityabisht894@gmail.com'
+    )
+  );
   const fontSizeMap = { small: '0.95rem', medium: '1.1rem', large: '1.2rem', xlarge: '1.35rem' };
 
   return (
@@ -164,11 +172,11 @@ export default function ArticlePage() {
               </button>
               {isAuthor && (
                 <>
-                  <Link href={`/write/${article._id}`} className="action-btn">
-                    <Edit3 size={16} />
+                  <Link href={`/write/${article._id}`} className="action-btn" title="Edit Article and Images">
+                    <Edit3 size={15} /> <span>Edit</span>
                   </Link>
-                  <button className="action-btn action-btn--danger" onClick={handleDelete}>
-                    <Trash2 size={16} />
+                  <button className="action-btn action-btn--danger" onClick={handleDelete} title="Delete Article">
+                    <Trash2 size={15} />
                   </button>
                 </>
               )}
@@ -189,7 +197,11 @@ export default function ArticlePage() {
           style={{
             fontFamily: article.layout?.fontFamily || 'Georgia, serif',
             fontSize: fontSizeMap[article.layout?.fontSize] || '1.1rem',
-            color: article.layout?.textColor || 'var(--text-primary)',
+            color: isDark
+              ? '#ffffff'
+              : (article.layout?.textColor && article.layout.textColor !== '#1a1a1a' && article.layout.textColor !== '#1c1917'
+                  ? article.layout.textColor
+                  : 'var(--text-primary)'),
             '--article-accent': article.layout?.accentColor || 'var(--accent)'
           }}
           dangerouslySetInnerHTML={{ __html: article.content }}
